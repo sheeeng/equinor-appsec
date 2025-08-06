@@ -1,0 +1,2834 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guidelines and tutorials related in Application Security in Equinor.">
+      
+      
+        <meta name="author" content="ISC AppSec, Equinor ASA">
+      
+      
+        <link rel="canonical" href="https://equinor.github.io/appsec/toolbox/github-advanced-security/setup/">
+      
+      
+        <link rel="prev" href="../faq/">
+      
+      
+        <link rel="next" href="../../guidelines/authn-authz/">
+      
+      
+      <link rel="icon" href="../../../assets/icons/appsec-iconenergyred.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>GitHub Advanced Security Enablement and Setup - Equinor AppSec</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/mkdocs-eq.css">
+    
+      <link rel="stylesheet" href="https://cdn.eds.equinor.com/font/equinor-font.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+<script type="text/javascript">
+!(function (cfg){function e(){cfg.onInit&&cfg.onInit(i)}var S,u,D,t,n,i,C=window,x=document,w=C.location,I="script",b="ingestionendpoint",E="disableExceptionTracking",A="ai.device.";"instrumentationKey"[S="toLowerCase"](),u="crossOrigin",D="POST",t="appInsightsSDK",n=cfg.name||"appInsights",(cfg.name||C[t])&&(C[t]=n),i=C[n]||function(l){var d=!1,g=!1,f={initialize:!0,queue:[],sv:"7",version:2,config:l};function m(e,t){var n={},i="Browser";function a(e){e=""+e;return 1===e.length?"0"+e:e}return n[A+"id"]=i[S](),n[A+"type"]=i,n["ai.operation.name"]=w&&w.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(f.sv||f.version),{time:(i=new Date).getUTCFullYear()+"-"+a(1+i.getUTCMonth())+"-"+a(i.getUTCDate())+"T"+a(i.getUTCHours())+":"+a(i.getUTCMinutes())+":"+a(i.getUTCSeconds())+"."+(i.getUTCMilliseconds()/1e3).toFixed(3).slice(2,5)+"Z",iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}},ver:4,seq:"1",aiDataContract:undefined}}var h=-1,v=0,y=["js.monitor.azure.com","js.cdn.applicationinsights.io","js.cdn.monitor.azure.com","js0.cdn.applicationinsights.io","js0.cdn.monitor.azure.com","js2.cdn.applicationinsights.io","js2.cdn.monitor.azure.com","az416426.vo.msecnd.net"],k=l.url||cfg.src;if(k){if((n=navigator)&&(~(n=(n.userAgent||"").toLowerCase()).indexOf("msie")||~n.indexOf("trident/"))&&~k.indexOf("ai.3")&&(k=k.replace(/(\/)(ai\.3\.)([^\d]*)$/,function(e,t,n){return t+"ai.2"+n})),!1!==cfg.cr)for(var e=0;e<y.length;e++)if(0<k.indexOf(y[e])){h=e;break}var i=function(e){var a,t,n,i,o,r,s,c,p,u;f.queue=[],g||(0<=h&&v+1<y.length?(a=(h+v+1)%y.length,T(k.replace(/^(.*\/\/)([\w\.]*)(\/.*)$/,function(e,t,n,i){return t+y[a]+i})),v+=1):(d=g=!0,o=k,c=(p=function(){var e,t={},n=l.connectionString;if(n)for(var i=n.split(";"),a=0;a<i.length;a++){var o=i[a].split("=");2===o.length&&(t[o[0][S]()]=o[1])}return t[b]||(e=(n=t.endpointsuffix)?t.location:null,t[b]="https://"+(e?e+".":"")+"dc."+(n||"services.visualstudio.com")),t}()).instrumentationkey||l.instrumentationKey||"",p=(p=p[b])?p+"/v2/track":l.endpointUrl,(u=[]).push((t="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",n=o,r=p,(s=(i=m(c,"Exception")).data).baseType="ExceptionData",s.baseData.exceptions=[{typeName:"SDKLoadFailed",message:t.replace(/\./g,"-"),hasFullStack:!1,stack:t+"\nSnippet failed to load ["+n+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(w&&w.pathname||"_unknown_")+"\nEndpoint: "+r,parsedStack:[]}],i)),u.push((s=o,t=p,(r=(n=m(c,"Message")).data).baseType="MessageData",(i=r.baseData).message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+s+")").replace(/\"/g,"")+'"',i.properties={endpoint:t},n)),o=u,c=p,JSON&&((r=C.fetch)&&!cfg.useXhr?r(c,{method:D,body:JSON.stringify(o),mode:"cors"}):XMLHttpRequest&&((s=new XMLHttpRequest).open(D,c),s.setRequestHeader("Content-type","application/json"),s.send(JSON.stringify(o))))))},a=function(e,t){g||setTimeout(function(){!t&&f.core||i()},500),d=!1},T=function(e){var n=x.createElement(I),e=(n.src=e,cfg[u]);return!e&&""!==e||"undefined"==n[u]||(n[u]=e),n.onload=a,n.onerror=i,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||a(0,t)},cfg.ld&&cfg.ld<0?x.getElementsByTagName("head")[0].appendChild(n):setTimeout(function(){x.getElementsByTagName(I)[0].parentNode.appendChild(n)},cfg.ld||0),n};T(k)}try{f.cookie=x.cookie}catch(p){}function t(e){for(;e.length;)!function(t){f[t]=function(){var e=arguments;d||f.queue.push(function(){f[t].apply(f,e)})}}(e.pop())}var r,s,n="track",o="TrackPage",c="TrackEvent",n=(t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+o,"stop"+o,"start"+c,"stop"+c,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),f.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},(l.extensionConfig||{}).ApplicationInsightsAnalytics||{});return!0!==l[E]&&!0!==n[E]&&(t(["_"+(r="onerror")]),s=C[r],C[r]=function(e,t,n,i,a){var o=s&&s(e,t,n,i,a);return!0!==o&&f["_"+r]({message:e,url:t,lineNumber:n,columnNumber:i,error:a,evt:C.event}),o},l.autoExceptionInstrumented=!0),f}(cfg.cfg),(C[n]=i).queue&&0===i.queue.length?(i.queue.push(e),i.trackPageView({})):e();})({
+src: "https://js.monitor.azure.com/scripts/b/ai.3.gbl.min.js",
+name: "appsec.appInsights",
+ld: 0,
+// useXhr: 1,
+crossOrigin: "anonymous",
+// onInit: null,
+// cr: 0,
+cfg: { // Application Insights Configuration
+ connectionString: "InstrumentationKey=57276352-88e8-44a2-8475-7983d748f4a6;IngestionEndpoint=https://northeurope-2.in.applicationinsights.azure.com/;LiveEndpoint=https://northeurope.livediagnostics.monitor.azure.com/",
+ enableDebug: false,
+ disableCookiesUsage: true,
+}});
+</script>
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#github-advanced-security-enablement-and-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Equinor AppSec" class="md-header__button md-logo" aria-label="Equinor AppSec" data-md-component="logo">
+      
+  <img src="../../../assets/icons/appsec-icon-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Equinor AppSec
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GitHub Advanced Security Enablement and Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/equinor/appsec/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  AppSec Portal
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Toolbox
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../security-champion/" class="md-tabs__link">
+          
+  
+    
+  
+  Security champion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/" class="md-tabs__link">
+          
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Equinor AppSec" class="md-nav__button md-logo" aria-label="Equinor AppSec" data-md-component="logo">
+      
+  <img src="../../../assets/icons/appsec-icon-white.svg" alt="logo">
+
+    </a>
+    Equinor AppSec
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/equinor/appsec/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AppSec Portal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Toolbox
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Toolbox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Github advanced security
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Github advanced security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GHAS Transition FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    GitHub Advanced Security Enablement and Setup
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Advanced Security Enablement and Setup
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#secret-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secret Protection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secret Protection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-secret-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      (1) Secret Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-validity-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      (2) Validity checks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-non-provider-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      (3) Non-provider patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-scan-for-generic-passwords" class="md-nav__link">
+    <span class="md-ellipsis">
+      (4) Scan for generic passwords
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-push-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      (5) Push Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-who-can-bypass-push-protection-for-secret-scanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      (6) Who can bypass push protection for secret scanning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-prevent-direct-alert-dismissals" class="md-nav__link">
+    <span class="md-ellipsis">
+      (7) Prevent direct alert dismissals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-custom-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      (8) Custom Patterns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-code-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      (1) Code Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-codeql-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      (2) CodeQL Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      (3) Other Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-copilot-autofix" class="md-nav__link">
+    <span class="md-ellipsis">
+      (4) Copilot Autofix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-copilot-autofix-for-third-party-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      (5) Copilot Autofix for third-party tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-prevent-direct-alert-dismissals" class="md-nav__link">
+    <span class="md-ellipsis">
+      (6) Prevent direct alert dismissals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-protection-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      (7) Protection rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-private-vulnerability-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      (8) Private vulnerability reporting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependency Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-dependency-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      (1) Dependency Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-automatic-dependency-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      (2) Automatic dependency submission
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-dependabot-alerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      (3) Dependabot alerts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-dependabot-security-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      (4) Dependabot security updates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-grouped-security-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      (5) Grouped security updates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-dependabot-version-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      (6) Dependabot version updates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-dependabot-on-action-runners" class="md-nav__link">
+    <span class="md-ellipsis">
+      (7) Dependabot on action runners
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-dependabot-on-self-hosted-runners" class="md-nav__link">
+    <span class="md-ellipsis">
+      (8) Dependabot on self-hosted runners
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-questions-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Questions &amp; Comments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Guidelines
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Guidelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guidelines/authn-authz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication and Authorization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guidelines/logging-monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web Application Logging and Monitoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guidelines/secret-scanning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secret Scanning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guidelines/security-requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Requirements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../snyk/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Snyk
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Snyk
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../snyk/2-about-snyk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About Snyk
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../snyk/3-snyk_support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Snyk Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../snyk/4-vulnerabilities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vulnerabilities
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../snyk/curriculum/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Curriculum
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_5" id="__nav_2_4_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Curriculum
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../snyk/curriculum/1-snyk_products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Products
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../snyk/curriculum/2-integrations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../snyk/curriculum/3-projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../snyk/curriculum/4-scan_results/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scan Results
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../snyk/curriculum/5-advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../snyk/curriculum/6-faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../threat-modeling/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Threat modeling
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Threat modeling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../threat-modeling/threat-modeling-101-workshop/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Threat modeling 101 workshop
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Threat modeling 101 workshop
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../threat-modeling/threat-modeling-101-workshop/2-next-steps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Next steps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../threat-modeling/threat-modeling-101-workshop/3-cheat-sheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cheat Sheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/pre-commit-faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pre-commit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/secure-coding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure Code Learning platform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/sharing-secrets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharing secrets (Yopass)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Version control
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Version control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../version-control/gh-actions-runners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GitHub Actions and Self-Hosted Runners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../version-control/git-github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git and Github
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../version-control/git-signed-commits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Signed commits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../security-champion/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Security champion
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Security champion
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security-champion/1-new_security_champion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    I've joined, now what?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security-champion/2-security_champion_activities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Champion Activities 🦸‍♀️
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security-champion/4-learning-platform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure Code Learning platform
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security-champion/5-belts-and-activities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Belts and Activity system
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security-champion/6-merch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merchandise
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../about/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#secret-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secret Protection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Secret Protection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-secret-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      (1) Secret Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-validity-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      (2) Validity checks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-non-provider-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      (3) Non-provider patterns
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-scan-for-generic-passwords" class="md-nav__link">
+    <span class="md-ellipsis">
+      (4) Scan for generic passwords
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-push-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      (5) Push Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-who-can-bypass-push-protection-for-secret-scanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      (6) Who can bypass push protection for secret scanning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-prevent-direct-alert-dismissals" class="md-nav__link">
+    <span class="md-ellipsis">
+      (7) Prevent direct alert dismissals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-custom-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      (8) Custom Patterns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-code-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      (1) Code Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-codeql-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      (2) CodeQL Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      (3) Other Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-copilot-autofix" class="md-nav__link">
+    <span class="md-ellipsis">
+      (4) Copilot Autofix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-copilot-autofix-for-third-party-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      (5) Copilot Autofix for third-party tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-prevent-direct-alert-dismissals" class="md-nav__link">
+    <span class="md-ellipsis">
+      (6) Prevent direct alert dismissals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-protection-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      (7) Protection rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-private-vulnerability-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      (8) Private vulnerability reporting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependency Graph
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependency Graph">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-dependency-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      (1) Dependency Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-automatic-dependency-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      (2) Automatic dependency submission
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-dependabot-alerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      (3) Dependabot alerts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-dependabot-security-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      (4) Dependabot security updates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-grouped-security-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      (5) Grouped security updates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-dependabot-version-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      (6) Dependabot version updates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-dependabot-on-action-runners" class="md-nav__link">
+    <span class="md-ellipsis">
+      (7) Dependabot on action runners
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-dependabot-on-self-hosted-runners" class="md-nav__link">
+    <span class="md-ellipsis">
+      (8) Dependabot on self-hosted runners
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-questions-comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Questions &amp; Comments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="github-advanced-security-enablement-and-setup">GitHub Advanced Security Enablement and Setup<a class="headerlink" href="#github-advanced-security-enablement-and-setup" title="Permanent link">&para;</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul>
+<li>Internal and Private Repositories must wait until <strong>1st of October</strong> before enabling GHAS.</li>
+<li>You must be a repository Admin to proceed.</li>
+</ul>
+</div>
+<p><br/>
+This document is intended to give teams an overview of the options available in GitHub Advanced Security (GHAS), including a short summary of each feature, which ones we recommend enabling, which ones we don't and which are up to your team.
+<br/><br/>
+The document is structured into 3 sections, Secret Protection, Code Security and Dependency Graph, reflecting the structure you will find in Github's security settings.<br/><br/>
+To start off, navigate to your repository and under Settings -&gt; Security -&gt; Advanced Security.
+<br/><br/></p>
+<p><img alt="Navigation to GHAS" src="../image.png" /></p>
+<p>Below you can find a table summary of the options we recommend to enable:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Options</strong></th>
+<th><strong>Recommendation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#1-secret-protection"><strong>Secret Protection</strong> (1)</a></td>
+<td></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#2-validity-checks">Validity Checks (2)</a></td>
+<td>🤷 Optional</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#3-non-provider-patterns">Non-provider Patterns (3)</a></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#4-scan-for-generic-passwords">Scan for Generic Passwords (4)</a></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#5-push-protection">Push-Protection (5)</a></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#6-who-can-bypass-push-protection">Who can bypass push protection (6)</a></td>
+<td>👤 Anyone (default)</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#7-prevent-alert-dismissal">Prevent Alert Dismissal (7)</a></td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#8-custom-patterns">Custom Patterns (8)</a></td>
+<td>🤷 Optional</td>
+</tr>
+<tr>
+<td><a href="#1-code-security"><strong>Code Security</strong> (1)</a></td>
+<td></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#2-codeql-analysis">CodeQL analysis (2)</a></td>
+<td>⚙️ Default setup</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#3-other-tools">Other tools (3)</a></td>
+<td>🤷 Optional</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#4-copilot-autofix">Copilot Autofix (4)</a></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#5-copilot-autofix-for-third-party-tools">Copilot Autofix for Third Party Tools (5)</a></td>
+<td>🤷 Optional</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#6-prevent-direct-alert-dismissal">Prevent Direct Alert Dismissal (6)</a></td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#7-protection-rules">Protection Rules (7)</a></td>
+<td>⚙️ Default setup</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#8-private-vulnerability-reporting">Private Vulnerability Reporting (8)</a></td>
+<td>🤷 Optional</td>
+</tr>
+<tr>
+<td><a href="#1-dependency-graph"><strong>Dependency Graph</strong> (1)</a></td>
+<td></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#2-automatic-dependency-submission">Automatic dependency submission (2)</a></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#3-dependabot-alerts">Dependabot Alerts (3)</a></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#4-dependabot-security-updates">Dependabot Security Updates (4)</a></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#5-grouped-security-updates">Grouped Security Updates (5)</a></td>
+<td>🤷 Optional</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#6-dependabot-version-updates">Dependabot Version Updates (6)</a></td>
+<td>✅ Yes*</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#7-dependabot-on-action-runners">Dependabot on Action Runners (7)</a></td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td></td>
+<td><a href="#8-dependabot-on-self-hosted-runners">Dependabot on Self-hosted Runners (8)</a></td>
+<td>❌ No</td>
+</tr>
+</tbody>
+</table>
+<p>* Please see important note and warning on <a href="#6-dependabot-version-updates">Dependabot Version Updates (6)</a> section   </p>
+<h2 id="secret-protection"><a href="https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning">Secret Protection</a><a class="headerlink" href="#secret-protection" title="Permanent link">&para;</a></h2>
+<p>This section will guide you through the enablement of secret scanning for your repositories. <br/>
+It gives a brief explanation of each of the options available and our recommendation on whether to enable them. <br/>
+The goal is to detect exposed secrets early on thus reducing risk in the SDLC. <br/>
+<br/></p>
+<p><img alt="Secret Protection Options" src="../Screenshot%202025-06-12%20at%2014.28.28.png" /></p>
+<h3 id="1-secret-protection">(1) Secret Protection<a class="headerlink" href="#1-secret-protection" title="Permanent link">&para;</a></h3>
+<p>Enabling Secret Protection will enable secret scanning on the repository. Upon enabling GitHub will start scanning the whole <strong>history</strong> of the repository for secrets, this scan will include commits, pull requests, issues, comments, discussions and wikis. <br/>
+<br/>
+✅ Secret Protection should be enabled.</p>
+<h3 id="2-validity-checks">(2) <a href="https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets">Validity checks</a><a class="headerlink" href="#2-validity-checks" title="Permanent link">&para;</a></h3>
+<p>Enhances secret scanning by verifying whether a detected secret is actually valid. When enabled, GitHub forwards the detected secret to the relevant provider (for example, an Azure secret would be sent to Microsoft) to confirm if it's active. Enabling this feature provides teams with insight into whether a secret is live and exploitable. However, it's important to note that the third party may, in the future, automatically revoke or disable the secret once its validity is confirmed. For instance, if Azure confirms a secret is active, it might proactively disable it to prevent abuse. <br/>
+<br/>
+🤷 The enablement of Validity checks should be decided by the team.</p>
+<h3 id="3-non-provider-patterns">(3) <a href="https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#non-provider-patterns">Non-provider patterns</a><a class="headerlink" href="#3-non-provider-patterns" title="Permanent link">&para;</a></h3>
+<p>Improves secret scanning coverage by also detecting secrets that don't belong to a specific provider (like Azure or AWS). This includes things like custom authentication tokens, connection strings, SSH keys, and other credentials. <br/>
+<br/>
+✅ We recommend enabling Non-provider patterns to catch a broader range of exposed secrets, not just those tied to known providers.</p>
+<h3 id="4-scan-for-generic-passwords">(4) <a href="https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/copilot-secret-scanning/responsible-ai-generic-secrets">Scan for generic passwords</a><a class="headerlink" href="#4-scan-for-generic-passwords" title="Permanent link">&para;</a></h3>
+<p>Uses Copilot AI to identify passwords that don’t follow standard or known patterns. This helps catch secrets that might otherwise go undetected—but it can also lead to a slightly higher number of false positives. <br/>
+<br/>
+✅ We recommend giving Scan for generic passwords a try. If it generates too much noise or becomes disruptive, let us know and feel free to disable it.</p>
+<h3 id="5-push-protection">(5) <a href="https://docs.github.com/en/code-security/secret-scanning/introduction/about-push-protection">Push Protection</a><a class="headerlink" href="#5-push-protection" title="Permanent link">&para;</a></h3>
+<p>Scans commits for <a href="https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets">supported secrets</a> and blocks them before they’re pushed to a remote branch. This helps stop secrets from ever reaching the repository history, making cleanup easier or even unnecessary. <br/>
+Pushes are only blocked if GitHub is <em>very confident</em> that the detected string is a valid secret from a known provider (like Azure, AWS, etc.). It <strong>does not block on non-provider patterns or generic passwords</strong> detected by AI to keep false positives low. <br/>
+That said, developers will see push failures when secrets are detected even if they’re false positives, some errors may be a bit hard to figure out and might require digging into logs, so it’s important to prepare your team for this behavior. The alerts can be bypassed (6). <br/>
+<br/>
+✅ We recommend enabling Push Protection to prevent secrets at the source. But make sure your team is aware of the tradeoff: it may occasionally block a push, but it’s far less painful than cleaning up leaked secrets later.</p>
+<h3 id="6-who-can-bypass-push-protection-for-secret-scanning">(6) <a href="https://docs.github.com/en/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/delegated-bypass-for-push-protection/about-delegated-bypass-for-push-protection">Who can bypass push protection for secret scanning</a><a class="headerlink" href="#6-who-can-bypass-push-protection-for-secret-scanning" title="Permanent link">&para;</a></h3>
+<p>This option is only available when push protection (5) is enabled and it configures who is allowed to bypass the block if a secret is detected.<br/>
+<br/>
+👤 By default, GitHub allows anyone with write access to bypass the rule and this works well for most teams. If your team prefers tighter control, you can restrict bypass permissions to specific roles or individuals.</p>
+<h3 id="7-prevent-direct-alert-dismissals">(7) <a href="https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/enabling-delegated-alert-dismissal-for-secret-scanning">Prevent direct alert dismissals</a><a class="headerlink" href="#7-prevent-direct-alert-dismissals" title="Permanent link">&para;</a></h3>
+<p>This Setting requires teams to submit a request before they can dismiss a secret scanning alert. These requests must then be reviewed and approved by the AppSec Team.<br/>
+<br/>
+❌ We do not recommend enabling prevent direct alert dismissals. The AppSec team believes that teams are in the best position to assess alerts in their context and should have the autonomy to manage them.</p>
+<h3 id="8-custom-patterns">(8) <a href="https://docs.github.com/en/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/custom-patterns/defining-custom-patterns-for-secret-scanning">Custom Patterns</a><a class="headerlink" href="#8-custom-patterns" title="Permanent link">&para;</a></h3>
+<p>Lets you define your own regex rules to detect secrets specific to your team or application, things GitHub doesn’t catch by default, this can be useful for internal tokens, credentials, or configuration values that follow a custom format. <br/>
+<br/>
+🤷 It takes a bit of effort to set up custom patterns, and we don’t expect most teams will need it. But if you think this could be useful for your setup, let us know and we will be happy to help you configure it.</p>
+<h2 id="code-security"><a href="https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-supply-chain-security">Code Security</a><a class="headerlink" href="#code-security" title="Permanent link">&para;</a></h2>
+<p>Code Security manages the configuration of GitHub’s Static Application Security Testing (SAST) tool also known as CodeQL, which runs via GitHub Actions to scan your repository for security issues in the code.<br/>
+<br/></p>
+<p><img alt="Code Security Options" src="../Screenshot%202025-06-12%20at%2015.20.32.png" /></p>
+<h3 id="1-code-security">(1) <a href="https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning">Code Security</a><a class="headerlink" href="#1-code-security" title="Permanent link">&para;</a></h3>
+<p>The setup of CodeQL may vary depending on the language and ecosystem, some will work out of the box, while others may require configuring a workflow file in the repo. Once enabled, it continuously scans code for common vulnerabilities.<br/>
+<br/>
+✅ Code Security should be enabled.</p>
+<h3 id="2-codeql-analysis">(2) <a href="https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql">CodeQL Analysis</a><a class="headerlink" href="#2-codeql-analysis" title="Permanent link">&para;</a></h3>
+<p>This has be configured for code security to work. Once enabled a GitHub action will run to scan your code automatically.<br/>
+<br/>
+⚙️ We recommend choosing the <a href="https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning">default setup</a> for CodeQL Analysis, which works well for most repositories and languages.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>After CodeQL has run for the first time, we recommend you check the Security tab of your repo and then navigate to Code Scanning.<br/>
+If the default setup is not working properly you will see the following warning. Check the <a href="https://docs.github.com/en/code-security/code-scanning/managing-your-code-scanning-configuration/about-the-tool-status-page">tool status page</a> to get more information about the issue.<br/>
+If you encounter this get in touch with us.</p>
+</div>
+<p><img alt="Screenshot showing the Code Scanning section in the Security tab of a GitHub repository" src="../image-2.png" /></p>
+<h3 id="3-other-tools">(3) Other Tools<a class="headerlink" href="#3-other-tools" title="Permanent link">&para;</a></h3>
+<p>Enables you to integrate third party code scanning tools such as <a href="https://trivy.dev/latest/">Trivy</a> for IaC and container scanning. <br/>
+<br/>
+🤷 If you think setting up other tools would be useful, let us know so we can help you configure it.</p>
+<h3 id="4-copilot-autofix">(4) <a href="https://docs.github.com/en/code-security/code-scanning/managing-code-scanning-alerts/responsible-use-autofix-code-scanning">Copilot Autofix</a><a class="headerlink" href="#4-copilot-autofix" title="Permanent link">&para;</a></h3>
+<p>Allows Copilot to automatically generate a pull request to fix vulnerabilities identified by CodeQL. When enabled, you’ll see suggested fixes, and you can choose to let Copilot create a PR with the proposed changes.<br/>
+It’s a helpful way to quickly address straight forward issues but we always recommend to review the fix before merging.<br/>
+<br/>
+✅ We recommend enabling Copilot Autofix (it does not need a copilot license).</p>
+<h3 id="5-copilot-autofix-for-third-party-tools">(5) Copilot Autofix for third-party tools<a class="headerlink" href="#5-copilot-autofix-for-third-party-tools" title="Permanent link">&para;</a></h3>
+<p>Copilot Autofix also works with third-party security tools, not just CodeQL. It will generate potential fixes based on issues identified by <a href="#3-other-tools">other tools</a> installed in the repository.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently this feature only supports ESLint.
+ESLint has to be configured in the repository through the <a href="#3-other-tools">other tools option</a>.</p>
+</div>
+<p>🤷 The enablement of Copilot Autofix for third-party tools should be decided by the team.</p>
+<h3 id="6-prevent-direct-alert-dismissals">(6) Prevent direct alert dismissals<a class="headerlink" href="#6-prevent-direct-alert-dismissals" title="Permanent link">&para;</a></h3>
+<p>If enabled, any attempt to dismiss a CodeQL alert will trigger a review request that’s sent to the AppSec team. This adds unnecessary overhead and delays. We believe teams should be trusted to manage and triage their own alerts based on what makes sense in their context.<br/>
+<br/>
+❌ We do not recommend enabling prevent direct alert dismissals setting.</p>
+<h3 id="7-protection-rules">(7) Protection rules<a class="headerlink" href="#7-protection-rules" title="Permanent link">&para;</a></h3>
+<p>Allows you to set a check runs failure threshold to control when code scanning should block a pull request.
+You can choose the alert severity level that will cause the Code Scanning check to fail. Combined with a branch ruleset, this allows you to prevent merges to protected branches when these severity level issues are detected.<br/>
+<br/>
+⚙️ The recommended set up of protection rules should be good for most teams, let us know if you need help setting up a more advanced ruleset.</p>
+<h3 id="8-private-vulnerability-reporting">(8) <a href="https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability">Private vulnerability reporting</a><a class="headerlink" href="#8-private-vulnerability-reporting" title="Permanent link">&para;</a></h3>
+<p>This is only available for public repositories, it provides a standardized and secure way for the community to report security vulnerabilities directly to the maintainers of the repository.<br/>
+<br/>
+🤷 Enablement of private vulnerability reporting should be a team decision, consider how you plan to respond to incoming reports if enabled.</p>
+<h2 id="dependency-graph"><a href="https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-the-dependency-graph">Dependency Graph</a><a class="headerlink" href="#dependency-graph" title="Permanent link">&para;</a></h2>
+<p>The Dependency Graph gives GitHub visibility into the dependencies used in your repository.<br/>
+This is the foundation for the features below, enabling GitHub to identify known vulnerabilities or outdated packages in your project.<br/>
+Dependabot helps ensure your supply chain is monitored for risks and helps you in keeping your dependencies secure and up to date.</p>
+<p><img alt="Dependency graph options" src="../image-1.png" /></p>
+<h3 id="1-dependency-graph">(1) Dependency Graph<a class="headerlink" href="#1-dependency-graph" title="Permanent link">&para;</a></h3>
+<p>Must be enabled to use Dependabot, this allows GitHub to upload your dependencies and scan them for known vulnerabilities
+For this to work, your repository must include a lock or manifest file. <a href="https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/dependency-graph-supported-package-ecosystems">In some ecosystems</a>, like .NET, Java and Jupyter Notebooks you may need to run a dotnet restore (more guidance on this will come) to generate the required files.<br/>
+<br/>
+✅ Dependency Graph should be enabled.</p>
+<h3 id="2-automatic-dependency-submission">(2) <a href="https://docs.github.com/en/enterprise-cloud@latest/code-security/supply-chain-security/understanding-your-software-supply-chain/configuring-automatic-dependency-submission-for-your-repository">Automatic dependency submission</a><a class="headerlink" href="#2-automatic-dependency-submission" title="Permanent link">&para;</a></h3>
+<p>This allows GitHub to detect and report dependencies automatically. It helps keep your Dependency Graph up to date without manual intervention.<br/>
+<br/>
+✅ Automatic dependency submission should be enabled with the default settings.</p>
+<h3 id="3-dependabot-alerts">(3) <a href="https://docs.github.com/en/code-security/dependabot/dependabot-alerts/about-dependabot-alerts">Dependabot alerts</a><a class="headerlink" href="#3-dependabot-alerts" title="Permanent link">&para;</a></h3>
+<p>Notify you when vulnerabilities are found in your dependencies. Alerts will appear in the GitHub UI under the Security Dashboard, and can also be sent by email and filtered to a separate folder (e.g. by using the "security" keyword).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Slack notifications are not available with GHAS. We recommend setting up email notifications or configuring GitHub notification rules to make sure your team stays up to date on security issues.</p>
+</div>
+<p>✅ We recommend enabling Dependabot alerts.</p>
+<h3 id="4-dependabot-security-updates">(4) <a href="https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates">Dependabot security updates</a><a class="headerlink" href="#4-dependabot-security-updates" title="Permanent link">&para;</a></h3>
+<p>This will automatically create pull requests to upgrade dependencies to safe, non-vulnerable versions.<br/>
+<br/>
+✅ We recommend enabling Dependabot security updates.</p>
+<h3 id="5-grouped-security-updates">(5) <a href="https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates#about-grouped-security-updates">Grouped security updates</a><a class="headerlink" href="#5-grouped-security-updates" title="Permanent link">&para;</a></h3>
+<p>This option allows Dependabot to combine multiple security updates into a single pull request. This helps reduce the number or PRs but might require more thorough testing to ensure the combined upgrades do not break existing functionality.<br/>
+<br/>
+🤷 The enablement of Grouped security updates is up to the team.</p>
+<h3 id="6-dependabot-version-updates">(6) <a href="https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/about-dependabot-version-updates">Dependabot version updates</a><a class="headerlink" href="#6-dependabot-version-updates" title="Permanent link">&para;</a></h3>
+<p>Allows Dependabot to open pull requests to keep your dependencies up to date, even if there are no known vulnerabilities. This helps reduce technical debt and makes it easier to stay updated to the latest versions.<br/></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you're using GitHub Actions with SHA versioning, this option allows Dependabot to automatically update your GitHub Actions.
+If you're using GitHub Actions with semantic versioning, this option is optional, but we still recommend enabling it to maintain good security practices by keeping all your dependencies updated to latest versions.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Dependabot will suggest upgrading dependencies whenever new versions are available. Enabling this option can lead to a significant number of pull requests generated, requiring the team to actively manage them.
+It's beneficial to have a well defined process in place to handle these PRs effectively.</p>
+</div>
+<p>✅ We recommend enabling Dependabot version updates.</p>
+<h3 id="7-dependabot-on-action-runners">(7) <a href="https://docs.github.com/en/code-security/dependabot/working-with-dependabot/about-dependabot-on-github-actions-runners">Dependabot on action runners</a><a class="headerlink" href="#7-dependabot-on-action-runners" title="Permanent link">&para;</a></h3>
+<p>Enabling this option will result in Dependabot being run on an action runner, making it more transparent what Dependabot does. GitHub is moving to run by default on Action runners.<br/>
+<br/>
+✅ We recommend enabling Dependabot on action runners.</p>
+<h3 id="8-dependabot-on-self-hosted-runners">(8) <a href="https://docs.github.com/en/code-security/dependabot/maintain-dependencies/managing-dependabot-on-self-hosted-runners">Dependabot on self-hosted runners</a><a class="headerlink" href="#8-dependabot-on-self-hosted-runners" title="Permanent link">&para;</a></h3>
+<p>Enables Dependabot to run on a self-hosted action runner.<br/>
+<br/>
+❌ For most teams we do not recommend enabling Dependabot on self-hosted runners, but let us know if you think it could be useful for your team.</p>
+<h2 id="further-questions-comments">Further Questions &amp; Comments<a class="headerlink" href="#further-questions-comments" title="Permanent link">&para;</a></h2>
+<p>We encourage you to share your experiences, issues and improvement points with us.<br/>
+If you have any further questions or comments please reach out to us on the <a href="https://equinor.enterprise.slack.com/archives/CMM6FSW5V">#appsec</a> slack.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 23, 2025 13:57:51 UTC">June 23, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../faq/" class="md-footer__link md-footer__link--prev" aria-label="Previous: GHAS Transition FAQ">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                GHAS Transition FAQ
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../guidelines/authn-authz/" class="md-footer__link md-footer__link--next" aria-label="Next: Authentication and Authorization">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Authentication and Authorization
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; Equinor ASA (<a href="https://appsec.equinor.com/about/privacy/" target="_blank">Privacy Policy</a>)
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/equinor" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/EquinorASA" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.expand", "navigation.top", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
